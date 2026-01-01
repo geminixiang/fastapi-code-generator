@@ -4,7 +4,7 @@ Install the package in editable mode:
 
 ```sh
 $ git clone git@github.com:koxudaxi/fastapi-code-generator.git
-$ poetry install fastapi-code-generator
+$ uv add fastapi-code-generator
 ```
 
 # Contribute
@@ -17,11 +17,11 @@ We are waiting for your contributions to `fastapi-code-generator`.
 $ git clone git@github.com:<your username>/fastapi-code-generator.git
 $ cd fastapi-code-generator
 
-## 2. Install [poetry](https://github.com/python-poetry/poetry)
-$ curl -sSL curl -sSL https://install.python-poetry.org | python3 -
+## 2. Install [uv](https://docs.astral.sh/uv/getting-started/installation/)
+$ curl -LsSf https://astral.sh/uv/install.sh | sh
 
 ## 3. Install dependencies
-$ poetry install
+$ uv sync --dev
 
 ## 4. Create new branch and rewrite code.
 $ git checkout -b new-branch

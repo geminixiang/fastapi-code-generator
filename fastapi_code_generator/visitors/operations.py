@@ -9,7 +9,7 @@ def get_operations(parser: OpenAPIParser, model_path: Path) -> Dict[str, object]
     sorted_operations: List[Operation] = sorted(
         parser.operations.values(), key=lambda m: m.path
     )
-    return {'operations': sorted_operations}
+    return {"operations": sorted_operations}
 
 
 visit: Visitor = get_operations

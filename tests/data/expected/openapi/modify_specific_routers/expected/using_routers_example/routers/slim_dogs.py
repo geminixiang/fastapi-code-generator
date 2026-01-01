@@ -16,7 +16,7 @@ def list_slim_dogs(limit: Optional[int] = None) -> List[Pet]:
     """
     List All Slim Dogs
     """
-    return [Pet.parse_obj({"id": "9", "name": "Pluto"})]
+    return [Pet.model_validate({"id": "9", "name": "Pluto"})]
 
 
 @router.post('/dogs', response_model=None, tags=['Slim Dogs'])
@@ -32,4 +32,4 @@ def show_dog_by_id(dog_id: str = Path(..., alias='dogId')) -> Pet:
     """
     Info For a Specific Dog
     """
-    return Pet.parse_obj({"id": dog_id, "name": "Pluto"})
+    return Pet.model_validate({"id": dog_id, "name": "Pluto"})

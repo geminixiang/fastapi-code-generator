@@ -28,14 +28,14 @@ def get_imports(parser: OpenAPIParser, model_path: Path) -> Dict[str, object]:
         if reference:
             imports.append(data_type.all_imports)
             imports.append(
-                Import.from_full_path(f'.{model_path.stem}.{reference.name}')
+                Import.from_full_path(f".{model_path.stem}.{reference.name}")
             )
     for from_, imports_ in parser.imports_for_fastapi.items():
         imports[from_].update(imports_)
     for operation in parser.operations.values():
         if operation.imports:
             imports.alias.update(operation.imports.alias)
-    return {'imports': imports}
+    return {"imports": imports}
 
 
 visit: Visitor = get_imports
